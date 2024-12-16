@@ -57,4 +57,49 @@
 * {
   font-family: "inter", sans-serif;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.active-item::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 5px;
+  background-color: var(--gray);
+  border-radius: 5px;
+}
+
+.active-item {
+  position: relative;
+  top: -40px;
+  height: 148px;
+  cursor: pointer;
+  flex-direction: column;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  background-color: var(--primary);
+  transition: 0.3s;
+  animation: pulse 0.3s ease-in-out;
+}
+
+.active-item p {
+  position: relative;
+  transform: translateY(101px);
+  color: var(--light);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Початковий розмір */
+  }
+  50% {
+    transform: scale(1.1); /* Збільшення до 110% */
+  }
+  100% {
+    transform: scale(1); /* Відновлення до початкового розміру */
+  }
 }
