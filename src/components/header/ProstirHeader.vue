@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import SocialBtn from "../ui/SocialBtn.vue";
+
 const changeActiveBtn = (event: Event) => {
   const target = (event.target as HTMLElement).closest("li");
 
@@ -13,8 +15,8 @@ const changeActiveBtn = (event: Event) => {
 </script>
 
 <template>
-  <header>
-    <div class="m-auto max-w-[900px] py-8">
+  <header class="w-full bg-light sticky top-0 z-[998]">
+    <div class="m-auto max-w-[940px] py-5 px-5">
       <nav class="w-full flex items-center justify-between">
         <ul
           class="flex items-center justify-between basis-[330px]"
@@ -65,27 +67,66 @@ const changeActiveBtn = (event: Event) => {
             <p>КОНТАКТИ</p>
           </li>
           <li class="flex items-center gap-2">
-            <button
-              class="w-12 h-12 p-[7px] flex justify-center items-center border-primary border-[3px] rounded-[50%]"
-            >
-              <img
-                src="../../assets/img/facebook.svg"
-                alt="facebook"
-                class="w-full"
-              />
-            </button>
-            <button
-              class="w-12 h-12 p-[7px] flex justify-center items-center border-primary border-[3px] rounded-[50%]"
-            >
-              <img
-                src="../../assets/img/instagram.svg"
-                alt="instagram"
-                class="w-full"
-              />
-            </button>
+            <SocialBtn social="facebook" alt="facebook" />
+            <SocialBtn social="instagram" alt="instagram" />
           </li>
         </ul>
       </nav>
     </div>
   </header>
 </template>
+<style scoped>
+header::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 63px;
+  background-image: url("../../assets/img/header-waves.png");
+  background-position: center;
+  bottom: 0;
+  top: 160px;
+}
+
+.active-item::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 5px;
+  background-color: var(--gray);
+  border-radius: 5px;
+}
+
+.active-item {
+  position: relative;
+  top: -40px;
+  height: 148px;
+  cursor: pointer;
+  flex-direction: column;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  background-color: var(--primary);
+  transition: 0.3s;
+  animation: pulse 0.3s ease-in-out;
+}
+
+.active-item p {
+  position: relative;
+  transform: translateY(101px);
+  color: var(--light);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style>
