@@ -23,19 +23,19 @@ const changeActiveBtn = (event: Event) => {
           v-auto-animate
         >
           <li
-            class="font-medium text-sm text-black active-item w-[100px] text-center cursor-pointer"
+            class="font-medium text-sm text-black active-item w-[100px] Tablet:w-[80px] text-center cursor-pointer"
             @click="changeActiveBtn"
           >
             <p>ГОЛОВНА</p>
           </li>
           <li
-            class="font-medium text-sm text-black w-[100px] text-center cursor-pointer"
+            class="font-medium text-sm text-black w-[100px] Tablet:w-[80px] text-center cursor-pointer"
             @click="changeActiveBtn"
           >
             <p>ПРО НАС</p>
           </li>
           <li
-            class="font-medium text-sm text-black w-[100px] text-center cursor-pointer"
+            class="font-medium text-sm text-black w-[100px] Tablet:w-[80px] text-center cursor-pointer"
             @click="changeActiveBtn"
           >
             <p>ПОСЛУГИ</p>
@@ -55,13 +55,13 @@ const changeActiveBtn = (event: Event) => {
           v-auto-animate
         >
           <li
-            class="font-medium text-sm text-black w-[100px] text-center cursor-pointer"
+            class="font-medium text-sm text-black w-[100px] Tablet:w-[80px] text-center cursor-pointer"
             @click="changeActiveBtn"
           >
             <p>ГАЛЕРЕЯ</p>
           </li>
           <li
-            class="font-medium text-sm text-black w-[100px] text-center cursor-pointer"
+            class="font-medium text-sm text-black w-[100px] Tablet:w-[80px] text-center cursor-pointer"
             @click="changeActiveBtn"
           >
             <p>КОНТАКТИ</p>

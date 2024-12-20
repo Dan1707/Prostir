@@ -27,7 +27,7 @@ const advantArr = [
       <h2 class="dark">Наші переваги</h2>
       <p class="block-subtitle-dark">Чому саме наш заклад?</p>
       <div
-        class="mt-[60px] flex items-center justify-between max-w-[993px] m-auto"
+        class="mt-[60px] flex items-center justify-between max-w-[993px] m-auto Laptop:grid Laptop:grid-cols-2 Laptop:gap-[30px] Tablet:grid-cols-2 Tablet:gap-[30px] Tablet:grid"
       >
         <ProstirAdvantagesItem v-for="el in advantArr" :el="el" />
       </div>

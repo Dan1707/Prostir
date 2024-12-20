@@ -5,9 +5,11 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
 <template>
   <section class="w-full bg-[linear-gradient(92deg,_#5dff4f_0%,_#53aa56_100%)]">
     <div
-      class="block-container p-[60px_10px_0_10px_!important] flex items-center justify-between"
+      class="block-container p-[60px_10px_0_10px_!important] flex items-center justify-between Tablet:flex-col Tablet:gap-[30px] Tablet:items-center"
     >
-      <div>
+      <div
+        class="Tablet:flex Tablet:flex-col Tablet:items-center Tablet:gap-[30px] Tablet:text-center"
+      >
         <h1
           class="font-bold text-5xl leading-[112%] tracking-[0.01em] text-light font-title"
         >
@@ -19,9 +21,11 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
           Місце, де ваша дитина зможе повноцінно розвиватися та вдосконалювати
           свої навички.
         </p>
-        <div class="max-w-[350px] flex items-center justify-between mt-[57px]">
-          <ProstirBtn type="primary">Про нас</ProstirBtn>
-          <ProstirBtn type="normal">Контакти</ProstirBtn>
+        <div
+          class="max-w-[350px] flex items-center justify-between mt-[57px] Tablet:w-[320px] Tablet:flex-col Tablet:gap-[20px]"
+        >
+          <ProstirBtn type="primary" class="Tablet:w-full">Про нас</ProstirBtn>
+          <ProstirBtn type="normal" class="Tablet:w-full">Контакти</ProstirBtn>
         </div>
       </div>
       <div class="max-w-[530px] relative bottom-0 hero-img">

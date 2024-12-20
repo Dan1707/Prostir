@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
   <article
-    class="max-w-[234px] h-[245px] bg-primary p-5 rounded-[10px] flex flex-col items-center gap-2 shadow-[0_7px_1px_0_var(--shadow)]"
+    class="max-w-[234px] h-[245px] bg-primary p-5 rounded-[10px] flex flex-col items-center gap-2 shadow-[0_7px_1px_0_var(--shadow)] Laptop:max-w-full"
   >
     <div
       class="max-w-[120px] h-[120px] rounded-[50%] p-[27px] bg-light flex items-center justify-center"

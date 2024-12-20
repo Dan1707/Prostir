@@ -18,6 +18,17 @@ export default {
         text: ["Inter", "sans-serif"],
       },
     },
+    screens: {
+      Phonel: { max: "425px" },
+
+      Tablets: { max: "576px" },
+
+      Tablet: { max: "900px" },
+
+      Laptop: { max: "1024px" },
+
+      Desktop: { max: "1220px" },
+    },
   },
   plugins: [],
 };

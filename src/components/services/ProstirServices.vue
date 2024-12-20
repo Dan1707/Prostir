@@ -101,7 +101,6 @@ const blockBtnClick = (id: number) => {
   end.value = (id + 1) * itemsToShow.value;
 
   getSlicedArr();
-  console.log(id, start.value, end.value);
 };
 </script>
 
@@ -110,8 +109,8 @@ const blockBtnClick = (id: number) => {
     <div class="block-container">
       <h2 class="dark">Наші послуги</h2>
       <p class="block-subtitle-dark mt-[9px]">Що ми пропонуємо?</p>
-      <div class="flex items-center justify-between w-full">
-        <button @click="prev">
+      <div class="flex items-center justify-between gap-3 w-full">
+        <button @click="prev" class="Laptop:hidden">
           <img
             src="../../../src/assets/img/services-slider-arrow.svg"
             alt="services-slider-arrow"
@@ -126,7 +125,7 @@ const blockBtnClick = (id: number) => {
             class="slider-item"
           />
         </div>
-        <button @click="next">
+        <button @click="next" class="Laptop:hidden">
           <img
             src="../../../src/assets/img/services-slider-arrow.svg"
             alt="services-slider-arrow"
@@ -134,16 +133,32 @@ const blockBtnClick = (id: number) => {
         </button>
       </div>
       <div
-        class="max-w-[150px] m-auto py-3 px-9 rounded-[10px] bg-[#7AFF6F] shadow-[0_6px_0_0_#b2ffab] flex items-center justify-between mt-[20px] gap-[7px]"
+        class="flex items-center justify-center max-w-[400px] m-auto Laptop:justify-between"
       >
-        <SliderBlockBtn
-          class=""
-          v-for="(block, id) in sliderBlocks"
-          :key="id"
-          :class="{ 'bg-primary': id === currentBlockId - 1 }"
-          @click="blockBtnClick(id)"
-        />
-        <button></button>
+        <button @click="prev" class="hidden Laptop:block">
+          <img
+            src="../../../src/assets/img/services-slider-arrow.svg"
+            alt="services-slider-arrow"
+            class="-scale-x-100 scale-y-100"
+          />
+        </button>
+        <div
+          class="max-w-[150px] m-auto py-3 px-9 rounded-[10px] bg-[#7AFF6F] shadow-[0_6px_0_0_#b2ffab] flex items-center justify-between mt-[20px] gap-[7px]"
+        >
+          <SliderBlockBtn
+            class=""
+            v-for="(block, id) in sliderBlocks"
+            :key="id"
+            :class="{ 'bg-primary': id === currentBlockId - 1 }"
+            @click="blockBtnClick(id)"
+          />
+        </div>
+        <button @click="next" class="hidden Laptop:block">
+          <img
+            src="../../../src/assets/img/services-slider-arrow.svg"
+            alt="services-slider-arrow"
+          />
+        </button>
       </div>
     </div>
   </section>
