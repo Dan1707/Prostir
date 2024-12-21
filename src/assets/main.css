@@ -114,6 +114,39 @@ h4.light {
   font-size: 18px;
   color: var(--secondary-light);
 }
+
+@media (max-width: 768px) {
+  h2.dark {
+    font-size: 50px;
+  }
+  h2.light {
+    font-size: 50px;
+  }
+  h3.dark {
+    font-size: 36px;
+  }
+  h3.light {
+    font-size: 36px;
+  }
+  h4.dark {
+    font-size: 28px;
+  }
+  h4.light {
+    font-size: 28px;
+  }
+  .block-subtitle-dark {
+    font-size: 20px;
+  }
+  .block-subtitle-light {
+    font-size: 20px;
+  }
+  .block-secondary-text-primary {
+    font-size: 16px;
+  }
+  .block-secondary-text-light {
+    font-size: 16px;
+  }
+}
 /* DEFAULT STYLES ------------------------------------------------------------------------------------------------------------------------- */
 * {
   font-family: "inter", sans-serif;

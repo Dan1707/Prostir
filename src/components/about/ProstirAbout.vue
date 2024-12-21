@@ -4,14 +4,14 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
 
 <template>
   <section
-    class="w-full bg-[linear-gradient(131deg,_#5fd754_0%,_#ceffc7_100%)]"
+    class="w-full bg-[linear-gradient(220deg,_rgba(95,215,84,1)_31%,_rgba(83,170,86,1)_100%)]"
   >
     <div class="block-container">
       <h2 class="light">Про нас</h2>
       <p class="block-subtitle-light">детальніше про наш заклад</p>
       <div class="flex items-center justify-between mt-[63px] Desktop:flex-col">
         <div
-          class="basis-[598px] relative about-img Desktop:order-2 Desktop:basis-auto Desktop:w-[598px] Desktop:mt-[90px]"
+          class="basis-[598px] relative about-img Desktop:order-2 Desktop:basis-auto Desktop:w-[598px] Desktop:mt-[90px] Tablets:m-t-[50px] Tabletm:w-[fit-content_!important]"
         >
           <img
             src="../../../src/assets/img/about-img.png"
@@ -30,10 +30,12 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
             ornare in turpis neque. Leo neque id adipiscing fringilla nibh.
           </p>
           <div
-            class="flex items-center max-w-[373px] justify-between gap-3 mt-[83px] Desktop:m-auto Desktop:mt-[83px]"
+            class="flex items-center max-w-[373px] justify-between gap-3 mt-[83px] Desktop:m-auto Desktop:mt-[83px] Phonel:flex-col Phonel:w-full"
           >
-            <ProstirBtn type="primary">Про нас</ProstirBtn>
-            <ProstirBtn type="normal">Послуги</ProstirBtn>
+            <ProstirBtn type="primary" class="Phonel:w-full"
+              >Про нас</ProstirBtn
+            >
+            <ProstirBtn type="normal" class="Phonel:w-full">Послуги</ProstirBtn>
           </div>
         </div>
       </div>
@@ -51,6 +53,11 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
   top: 0;
   right: 0;
   z-index: 1 !important;
+}
+@media (max-width: 768px) {
+  .about-img::before {
+    display: none;
+  }
 }
 .about-img img {
   position: relative;

@@ -23,6 +23,8 @@ export default {
 
       Tablets: { max: "576px" },
 
+      Tabletm: { max: "768px" },
+
       Tablet: { max: "900px" },
 
       Laptop: { max: "1024px" },

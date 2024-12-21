@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import ProstirServicesItem from "./ProstirServicesItem.vue";
 import SliderBlockBtn from "../ui/sliderBlockBtn.vue";
 
@@ -48,6 +48,21 @@ const sliderItemArr = ref([
   },
   {
     title: "Групові заняття3",
+    imgPath: "services_3",
+    text: "Lorem ipsum dolor sit amet consectetur. Eget orci ut sit tristique ac nisl vitae. Diam sapien dolor nunc viverra ultricies dui nulla mauris.",
+  },
+  {
+    title: "Мозочкова стимуляція4",
+    imgPath: "services_1",
+    text: "Lorem ipsum dolor sit amet consectetur. Eget orci ut sit tristique ac nisl vitae. Diam sapien dolor nunc viverra ultricies dui nulla mauris.",
+  },
+  {
+    title: "Підготовка до школи4",
+    imgPath: "services_2",
+    text: "Lorem ipsum dolor sit amet consectetur. Eget orci ut sit tristique ac nisl vitae. Diam sapien dolor nunc viverra ultricies dui nulla mauris.",
+  },
+  {
+    title: "Групові заняття4",
     imgPath: "services_3",
     text: "Lorem ipsum dolor sit amet consectetur. Eget orci ut sit tristique ac nisl vitae. Diam sapien dolor nunc viverra ultricies dui nulla mauris.",
   },
@@ -102,6 +117,43 @@ const blockBtnClick = (id: number) => {
 
   getSlicedArr();
 };
+
+// wathing window width
+const windowWidth = ref(window.innerWidth);
+
+const updateWidth = () => {
+  windowWidth.value = window.innerWidth;
+
+  console.log(windowWidth.value);
+};
+
+onMounted(() => {
+  window.addEventListener("resize", updateWidth);
+});
+
+const updateSlider = (newWidth: number) => {
+  let breakpoint = 1024;
+  if (newWidth <= 576) {
+    breakpoint = 576;
+    itemsToShow.value = 1;
+  } else if (newWidth <= 1024) {
+    itemsToShow.value = 2;
+  } else {
+    itemsToShow.value = 3;
+  }
+  start.value = 0;
+  end.value = itemsToShow.value;
+
+  slicedItemArr.value = sliderItemArr.value.slice(start.value, end.value);
+  sliderBlocks.value = sliderItemArr.value.length / itemsToShow.value;
+  currentBlockId.value = end.value / itemsToShow.value;
+
+  getSlicedArr();
+};
+
+watch(windowWidth, (newWidth) => {
+  updateSlider(newWidth);
+});
 </script>
 
 <template>
@@ -109,33 +161,10 @@ const blockBtnClick = (id: number) => {
     <div class="block-container">
       <h2 class="dark">Наші послуги</h2>
       <p class="block-subtitle-dark mt-[9px]">Що ми пропонуємо?</p>
-      <div class="flex items-center justify-between gap-3 w-full">
-        <button @click="prev" class="Laptop:hidden">
-          <img
-            src="../../../src/assets/img/services-slider-arrow.svg"
-            alt="services-slider-arrow"
-            class="-scale-x-100 scale-y-100"
-          />
-        </button>
-        <div class="basis-[991px] flex items-center justify-between mt-[60px]">
-          <ProstirServicesItem
-            v-for="el in slicedItemArr"
-            :key="el.title"
-            :el="el"
-            class="slider-item"
-          />
-        </div>
-        <button @click="next" class="Laptop:hidden">
-          <img
-            src="../../../src/assets/img/services-slider-arrow.svg"
-            alt="services-slider-arrow"
-          />
-        </button>
-      </div>
       <div
-        class="flex items-center justify-center max-w-[400px] m-auto Laptop:justify-between"
+        class="flex items-center justify-between gap-3 w-full m-auto Laptop:w-fit"
       >
-        <button @click="prev" class="hidden Laptop:block">
+        <button @click="prev" class="Tablet:hidden">
           <img
             src="../../../src/assets/img/services-slider-arrow.svg"
             alt="services-slider-arrow"
@@ -143,7 +172,34 @@ const blockBtnClick = (id: number) => {
           />
         </button>
         <div
-          class="max-w-[150px] m-auto py-3 px-9 rounded-[10px] bg-[#7AFF6F] shadow-[0_6px_0_0_#b2ffab] flex items-center justify-between mt-[20px] gap-[7px]"
+          class="basis-[991px] flex items-center gap-3 justify-between mt-[60px] Laptop:basis-auto Laptop:m-auto Laptop:w-fit"
+        >
+          <ProstirServicesItem
+            v-for="el in slicedItemArr"
+            :key="el.title"
+            :el="el"
+            class="slider-item"
+          />
+        </div>
+        <button @click="next" class="Tablet:hidden">
+          <img
+            src="../../../src/assets/img/services-slider-arrow.svg"
+            alt="services-slider-arrow"
+          />
+        </button>
+      </div>
+      <div
+        class="flex items-center justify-center max-w-[400px] m-auto gap-5 Tablets:controls Laptop:justify-between Tablets:w-fit"
+      >
+        <button @click="prev" class="hidden Tablet:block">
+          <img
+            src="../../../src/assets/img/services-slider-arrow.svg"
+            alt="services-slider-arrow"
+            class="-scale-x-100 scale-y-100"
+          />
+        </button>
+        <div
+          class="max-w-fit m-auto py-3 px-9 rounded-[10px] bg-[#7AFF6F] shadow-[0_6px_0_0_#b2ffab] flex items-center justify-between mt-[20px] gap-[7px] Tablets:hidden"
         >
           <SliderBlockBtn
             class=""
@@ -153,7 +209,7 @@ const blockBtnClick = (id: number) => {
             @click="blockBtnClick(id)"
           />
         </div>
-        <button @click="next" class="hidden Laptop:block">
+        <button @click="next" class="hidden Tablet:block">
           <img
             src="../../../src/assets/img/services-slider-arrow.svg"
             alt="services-slider-arrow"

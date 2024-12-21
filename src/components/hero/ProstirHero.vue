@@ -11,18 +11,18 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
         class="Tablet:flex Tablet:flex-col Tablet:items-center Tablet:gap-[30px] Tablet:text-center"
       >
         <h1
-          class="font-bold text-5xl leading-[112%] tracking-[0.01em] text-light font-title"
+          class="font-bold text-5xl leading-[112%] Tablets:text-4xl tracking-[0.01em] text-light font-title"
         >
           Запрошуємо до “Простору можливостей”!
         </h1>
         <p
-          class="font-normal text-[1.38rem] leading-[127%] tracking-[0.02em] text-secondary-primary font-subTitle max-w-[499px] mt-[10px]"
+          class="font-normal text-[23px] Tablets:text-lg leading-[127%] tracking-[0.02em] text-secondary-primary font-subTitle max-w-[499px] mt-[10px]"
         >
           Місце, де ваша дитина зможе повноцінно розвиватися та вдосконалювати
           свої навички.
         </p>
         <div
-          class="max-w-[350px] flex items-center justify-between mt-[57px] Tablet:w-[320px] Tablet:flex-col Tablet:gap-[20px]"
+          class="max-w-[350px] flex items-center justify-between mt-[57px] Tablet:w-[320px] Tablets:w-[230px_!important] Tablet:flex-col Tablet:gap-[20px] Tablets:mt-[20px]"
         >
           <ProstirBtn type="primary" class="Tablet:w-full">Про нас</ProstirBtn>
           <ProstirBtn type="normal" class="Tablet:w-full">Контакти</ProstirBtn>
@@ -48,5 +48,10 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
   background-repeat: no-repeat;
   bottom: -35px;
   left: -77px;
+}
+@media (max-width: 576px) {
+  .hero-img::before {
+    display: none;
+  }
 }
 </style>
