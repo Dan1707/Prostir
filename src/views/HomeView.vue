@@ -5,6 +5,7 @@ import ProstirAdvantages from "@/components/advantages/ProstirAdvantages.vue";
 import ProstirHeader from "@/components/header/ProstirHeader.vue";
 import ProstirHero from "@/components/hero/ProstirHero.vue";
 import ProstirServices from "@/components/services/ProstirServices.vue";
+import ProstirTestemonials from "@/components/testemonials/ProstirTestemonials.vue";
 </script>
 
 <template>
@@ -14,4 +15,5 @@ import ProstirServices from "@/components/services/ProstirServices.vue";
   <ProstirAbout />
   <ProstirAd />
   <ProstirServices />
+  <ProstirTestemonials />
 </template>
