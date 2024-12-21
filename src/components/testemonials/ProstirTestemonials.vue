@@ -11,6 +11,7 @@ const sliderContent = [
 
 // slider animation
 const sliderInterval = 7000;
+const sliderChosenInterval = 15000;
 
 const slidingItems = () => {
   const sliderContainer = document.querySelector(
@@ -33,6 +34,8 @@ let sliderAnimation = setInterval(() => {
 }, sliderInterval);
 
 const startSlider = () => {
+  clearInterval(sliderAnimation);
+
   sliderAnimation = setInterval(() => {
     currentBlockId.value =
       currentBlockId.value === sliderBlocksQuantity - 1
@@ -53,7 +56,7 @@ const blockClick = (id: number) => {
 
   setTimeout(() => {
     startSlider();
-  }, 15000);
+  }, sliderChosenInterval);
 };
 
 // swipe logic
@@ -75,7 +78,7 @@ onMounted(() => {
 
     setTimeout(() => {
       startSlider();
-    }, 15000);
+    }, sliderChosenInterval);
   };
 
   const swipeRight = () => {
@@ -85,22 +88,11 @@ onMounted(() => {
       currentBlockId.value = sliderBlocksQuantity - 1;
     }
     clearInterval(sliderAnimation);
-
-    const sliderContainer = document.querySelector(
-      ".slider-container"
-    ) as HTMLElement;
-
-    if (sliderContainer) {
-      sliderContainer.style.transform = `translateX(-${
-        currentBlockId.value * 100
-      }%)`;
-
-      console.log(currentBlockId.value, sliderContainer.style.transform);
-    }
+    slidingItems();
 
     setTimeout(() => {
       startSlider();
-    }, 15000);
+    }, sliderChosenInterval);
   };
 
   swipe.on("swipeleft", swipeLeft);
