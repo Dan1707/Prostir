@@ -3,6 +3,7 @@ import ProstirAbout from "@/components/about/ProstirAbout.vue";
 import ProstirAd from "@/components/ad/ProstirAd.vue";
 import ProstirAdvantages from "@/components/advantages/ProstirAdvantages.vue";
 import ProstirCamp from "@/components/camp/ProstirCamp.vue";
+import ProstirFooter from "@/components/footer/ProstirFooter.vue";
 import ProstirForm from "@/components/form/ProstirForm.vue";
 import ProstirGallery from "@/components/gallery/ProstirGallery.vue";
 import ProstirHeader from "@/components/header/ProstirHeader.vue";
@@ -24,4 +25,5 @@ import ProstirWorkers from "@/components/workers/ProstirWorkers.vue";
   <ProstirGallery />
   <ProstirWorkers />
   <ProstirForm />
+  <ProstirFooter />
 </template>

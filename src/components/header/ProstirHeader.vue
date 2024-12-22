@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import SocialBtn from "../ui/SocialBtn.vue";
+import BurgerMenu from "./BurgerMenu.vue";
 
 const changeActiveBtn = (event: Event) => {
   const target = (event.target as HTMLElement).closest("li");
@@ -11,6 +13,14 @@ const changeActiveBtn = (event: Event) => {
   if (target) {
     target.classList.add("active-item");
   }
+};
+
+const showMenu = ref(false);
+
+const toggleMenu = (activeBurger: boolean) => {
+  showMenu.value = activeBurger;
+
+  console.log(showMenu.value);
 };
 </script>
 
@@ -76,13 +86,7 @@ const changeActiveBtn = (event: Event) => {
               class="Phonel:hidden"
             />
           </div>
-          <div
-            class="Tabletm:flex flex-col items-center justify-center gap-2 w-10"
-          >
-            <span class="bg-black rounded-lg w-full h-1"></span>
-            <span class="bg-black rounded-lg w-full h-1"></span>
-            <span class="bg-black rounded-lg w-full h-1"></span>
-          </div>
+          <BurgerMenu @burger="toggleMenu" />
         </div>
       </nav>
     </div>
@@ -94,7 +98,7 @@ header::after {
   content: "";
   width: 100%;
   height: 63px;
-  background-image: url("../../assets/img/header-waves.png");
+  background-image: url("../../assets/img/header-waves.svg");
   background-position: center;
   bottom: 0;
   top: 137px;
