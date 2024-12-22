@@ -53,8 +53,10 @@ import ProstirBtn from "../ui/ProstirBtn.vue";
           <div
             class="flex items-center justify-between w-full gap-10 mt-[62px] Tablets:flex-col Tablets:mt-[30px]"
           >
-            <ProstirBtn type="normal" class="w-full">Очистити</ProstirBtn>
-            <ProstirBtn type="primary" class="w-full">
+            <ProstirBtn type="normal" class="w-full Tablets:order-2"
+              >Очистити</ProstirBtn
+            >
+            <ProstirBtn type="primary" class="w-full Tablets:order-1">
               Надіслати форму
             </ProstirBtn>
           </div>
