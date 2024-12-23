@@ -8,7 +8,7 @@ defineEmits(["burger"]);
 
 <template>
   <button
-    class="Tabletm:flex flex-col items-center justify-center gap-2 w-10 duration-[0.6s] ease-in-out cursor-pointer"
+    class="Tabletm:flex flex-col items-center justify-center gap-2 w-10 duration-[0.6s] ease-in-out cursor-pointer z-[10000]"
     @click="
       activeBurger = !activeBurger;
       $emit('burger', activeBurger);

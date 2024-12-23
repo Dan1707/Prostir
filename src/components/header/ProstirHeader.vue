@@ -20,17 +20,61 @@ const showMenu = ref(false);
 const toggleMenu = (activeBurger: boolean) => {
   showMenu.value = activeBurger;
 
-  console.log(showMenu.value);
+  if (activeBurger) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 };
 </script>
 
 <template>
-  <header class="w-full bg-light sticky top-0 z-[998]">
-    <div class="m-auto max-w-[940px] py-3 px-5">
+  <header
+    class="w-full bg-light sticky top-0 z-[998]"
+    :class="{ 'after:opacity-0': showMenu }"
+  >
+    <div class="m-auto max-w-[940px] py-3 px-5 Tabletm:py-5 Phonel:py-3">
+      <div
+        class="fixed w-full h-screen bg-light left-[50%] translate-x-[-50%] top-[-100%] duration-[0.6s] Tabletm:block hidden"
+        :class="{ 'top-[0%]': showMenu }"
+      >
+        <nav class="flex flex-col items-center justify-center h-full">
+          <ul class="flex flex-col items-center justify-center">
+            <li
+              class="font-medium text-sm text-black basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
+            >
+              <p>ГОЛОВНА</p>
+            </li>
+            <li
+              class="font-medium text-sm text-black basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
+            >
+              <p>ПРО НАС</p>
+            </li>
+            <li
+              class="font-medium text-sm text-black basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
+            >
+              <p>ПОСЛУГИ</p>
+            </li>
+            <li
+              class="font-medium text-sm text-black basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
+            >
+              <p>ГАЛЕРЕЯ</p>
+            </li>
+            <li
+              class="font-medium text-sm text-black basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
+            >
+              <p>КОНТАКТИ</p>
+            </li>
+          </ul>
+          <div class="flex items-center gap-2">
+            <SocialBtn social="facebook" alt="facebook" />
+            <SocialBtn social="instagram" alt="instagram" />
+          </div>
+        </nav>
+      </div>
       <nav class="w-full flex items-center justify-between">
         <ul
           class="flex items-center justify-between basis-[330px] Tabletm:hidden"
-          v-auto-animate
         >
           <li
             class="font-medium text-sm text-black active-item basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
@@ -101,17 +145,18 @@ header::after {
   background-image: url("../../assets/img/header-waves.svg");
   background-position: center;
   bottom: 0;
-  top: 137px;
+  top: 145px;
+  transition: 0.6s;
 }
 
 @media (max-width: 768px) {
   header::after {
-    top: 80px;
+    top: 95px;
   }
 }
 @media (max-width: 425px) {
   header::after {
-    top: 73px;
+    top: 85px;
   }
 }
 

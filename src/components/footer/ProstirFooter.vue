@@ -15,7 +15,7 @@ import SocialBtn from "../ui/SocialBtn.vue";
         </div>
         <div class="Tablets:text-center">
           <h3 class="light">Простір можливостей</h3>
-          <p class="font-normal text-[17px] max-w-[260px] text-white mt-[7px]">
+          <p class="font-normal text-[17px] text-white mt-[7px]">
             Освітній центр нейрокорекції та розвитку
           </p>
           <p class="font-normal text-xs text-white mt-[14px]">м.Рівне</p>
