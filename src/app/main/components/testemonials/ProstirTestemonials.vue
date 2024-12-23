@@ -102,7 +102,7 @@ onMounted(() => {
 
 <template>
   <section
-    class="bg-[url('img/testemonials-bg.png')] bg-no-repeat bg-cover bg-center"
+    class="bg-[url('/src/app/main/components/testemonials/img/testemonials-bg.png')] bg-no-repeat bg-cover bg-center"
   >
     <div class="block-container flex flex-col items-center">
       <div>
