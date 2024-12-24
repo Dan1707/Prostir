@@ -51,7 +51,7 @@ footer::after {
   content: "";
   width: 100%;
   height: 53px;
-  background-image: url("../../img/footer-waves.svg");
+  background-image: url("img/footer-waves.svg");
   background-position: center;
   top: -30px;
 }

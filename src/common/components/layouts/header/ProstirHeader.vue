@@ -150,7 +150,7 @@ header::after {
   content: "";
   width: 100%;
   height: 63px;
-  background-image: url("../../img/header-waves.svg");
+  background-image: url("img/header-waves.svg");
   background-position: center;
   bottom: 0;
   top: 145px;
