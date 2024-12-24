@@ -157,3 +157,15 @@ h4.light {
   padding: 60px 10px 60px 10px;
   margin: 0 auto;
 }
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}

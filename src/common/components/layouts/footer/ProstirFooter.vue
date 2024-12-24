@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SocialBtn from "../ui/SocialBtn.vue";
+import SocialBtn from "@/common/components/ui/SocialBtn.vue";
 </script>
 
 <template>
@@ -11,7 +11,11 @@ import SocialBtn from "../ui/SocialBtn.vue";
         class="flex items-center gap-5 Laptop:justify-center Tablets:flex-col Tablets:items-center Tablets:gap-4"
       >
         <div class="basis-[216px] Laptop:basis-auto">
-          <img src="../../img/logo.svg" alt="logo" class="w-full" />
+          <img
+            src="../../../../assets/img/logo.svg"
+            alt="logo"
+            class="w-full"
+          />
         </div>
         <div class="Tablets:text-center">
           <h3 class="light">Простір можливостей</h3>

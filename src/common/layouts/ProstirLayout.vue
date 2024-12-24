@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import ProstirFooter from "../components/footer/ProstirFooter.vue";
-import ProstirHeader from "../components/header/ProstirHeader.vue";
+import ProstirFooter from "../components/layouts/footer/ProstirFooter.vue";
+import ProstirHeader from "../components/layouts/header/ProstirHeader.vue";
 </script>
 
 <template>
-  <ProstirHeader />
-  <main>
-    <routerView></routerView>
-  </main>
-  <ProstirFooter />
+  <div class="wrapper">
+    <ProstirHeader />
+    <main>
+      <routerView></routerView>
+    </main>
+    <ProstirFooter />
+  </div>
 </template>

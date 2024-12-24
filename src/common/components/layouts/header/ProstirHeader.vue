@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import SocialBtn from "../ui/SocialBtn.vue";
+import SocialBtn from "@/common/components/ui/SocialBtn.vue";
 import BurgerMenu from "./BurgerMenu.vue";
 
 const changeActiveBtn = (event: Event) => {
@@ -66,7 +66,7 @@ const toggleMenu = (activeBurger: boolean) => {
               <p>КОНТАКТИ</p>
             </li>
           </ul>
-          <div class="flex items-center gap-2">
+          <div class="items-center gap-2 Tabletm:flex hidden">
             <SocialBtn social="facebook" alt="facebook" />
             <SocialBtn social="instagram" alt="instagram" />
           </div>
@@ -80,7 +80,9 @@ const toggleMenu = (activeBurger: boolean) => {
             class="font-medium text-sm text-black active-item basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
             @click="changeActiveBtn"
           >
-            <p>ГОЛОВНА</p>
+            <RouterLink :to="{ name: 'home' }">
+              <p>ГОЛОВНА</p>
+            </RouterLink>
           </li>
           <li
             class="font-medium text-sm text-black basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
@@ -98,7 +100,11 @@ const toggleMenu = (activeBurger: boolean) => {
         <div
           class="basis-[160px] Tabletm:basis-[100px] gap-5 flex items-center justify-center overflow-hidden z-[10000]"
         >
-          <img src="../../img/logo.svg" alt="logo" class="w-full" />
+          <img
+            src="../../../../assets/img/logo.svg"
+            alt="logo"
+            class="w-full"
+          />
         </div>
         <ul
           class="flex items-center justify-between basis-[340px] Tabletm:hidden"
@@ -114,7 +120,9 @@ const toggleMenu = (activeBurger: boolean) => {
             class="font-medium text-sm text-black basis-[100px] Tablet:basis-[80px] text-center cursor-pointer"
             @click="changeActiveBtn"
           >
-            <p>КОНТАКТИ</p>
+            <RouterLink :to="{ name: 'contacts' }">
+              <p>КОНТАКТИ</p>
+            </RouterLink>
           </li>
           <li class="flex items-center gap-2">
             <SocialBtn social="facebook" alt="facebook" />
