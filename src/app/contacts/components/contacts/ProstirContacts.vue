@@ -1,13 +1,5 @@
 <script setup lang="ts">
 import SocialBtn from "@/common/components/ui/SocialBtn.vue";
-import { ref, watch } from "vue";
-
-const win = ref(window.innerWidth);
-
-watch([window.innerWidth], () => {
-  win.value = window.innerWidth;
-  console.log(win.value);
-});
 </script>
 
 <template>
@@ -55,7 +47,7 @@ watch([window.innerWidth], () => {
           width="600"
           height="450"
           style="border: 0"
-          allowfullscreen=""
+          allowfullscreen
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           class="Tablet:w-full"
