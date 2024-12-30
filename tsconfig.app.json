@@ -9,6 +9,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
+      "@ui/*": ["./src/common/components/ui*"],
       "@assets/*": ["./src/assets/*"],
       "@views/*": ["./src/views/*"],
       "@router/*": ["./src/router/*"]

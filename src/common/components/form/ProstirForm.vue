@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProstirBtn from "../ui/ProstirBtn.vue";
+import ProstirBtn from "@ui/ProstirBtn.vue";
 </script>
 
 <template>

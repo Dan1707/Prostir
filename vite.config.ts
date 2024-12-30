@@ -11,10 +11,12 @@ export default defineConfig({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@components": fileURLToPath(
-        new URL("./src/components", import.meta.url)
+        new URL("./src/common/components", import.meta.url)
+      ),
+      "@ui": fileURLToPath(
+        new URL("./src/common/components/ui", import.meta.url)
       ),
       "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
-      "@views": fileURLToPath(new URL("./src/views", import.meta.url)),
       "@router": fileURLToPath(new URL("./src/router", import.meta.url)),
     },
   },
